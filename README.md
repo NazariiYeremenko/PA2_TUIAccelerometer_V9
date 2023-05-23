@@ -1,8 +1,10 @@
 # PA2_TUIAccelerometer_V9
 PA #2 (Tangible interface) -  surface rotation based on hardware accelerometer sensor readings (variant 9)
 
-Project was made on Node.js Express (requires node). 
+Project was made on Node.js Express (requires node).
+ 
 Includes socket.io-client-4.6.1; three.js. 
+
 Was tested on Android devices. 
 
 Example of work: 
