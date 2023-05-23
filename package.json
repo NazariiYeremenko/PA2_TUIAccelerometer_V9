@@ -1,0 +1,22 @@
+{
+  "name": "secondlabexpress",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "three": "^0.152.2",
+    "ws": "^8.13.0"
+  }
+}
