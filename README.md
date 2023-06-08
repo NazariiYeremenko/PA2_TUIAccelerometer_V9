@@ -1,13 +1,14 @@
-# PA2_TUIAccelerometer_V9
-PA #2 (Tangible interface) -  surface rotation based on hardware accelerometer sensor readings (variant 9)
+# Calculation&graphics work (Spatial audio) 
 
-Project was made on Node.js Express (requires node).
- 
-Includes socket.io-client-4.6.1; three.js. 
+Report in .PDF: 
+[CGW paper work.pdf](https://github.com/NazariiYeremenko/PA2_TUIAccelerometer_V9/files/11692359/CGW.paper.work.pdf)
 
-Was tested on Android devices. 
+Report in .docx: 
+[CGW paper work.docx](https://github.com/NazariiYeremenko/PA2_TUIAccelerometer_V9/files/11692370/CGW.paper.work.docx)
 
 Example of work: 
 
-https://github.com/NazariiYeremenko/PA2_TUIAccelerometer_V9/assets/122809953/52befeb9-1994-4ae7-a60b-6e287d611c49
+
+https://github.com/NazariiYeremenko/PA2_TUIAccelerometer_V9/assets/122809953/6a1811e4-2983-4f65-a2c7-e4d9fd3e80f7
+
 
