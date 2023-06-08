@@ -14,7 +14,9 @@
 </head>
 <body>
 <canvas id="canvas"></canvas>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/three.min.js"></script>
+<script src="sound.js"></script>
 <script>
     // Create the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -29,8 +31,8 @@
     camera.position.z = 5;
 
     // Create a cube
-    const geometry = new THREE.BoxGeometry();
-    const materials = [
+    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+    const cubeMaterials = [
         new THREE.MeshBasicMaterial({ color: 0xff0000 }),  // Red
         new THREE.MeshBasicMaterial({ color: 0x00ff00 }),  // Green
         new THREE.MeshBasicMaterial({ color: 0x0000ff }),  // Blue
@@ -38,10 +40,14 @@
         new THREE.MeshBasicMaterial({ color: 0xff00ff }),  // Magenta
         new THREE.MeshBasicMaterial({ color: 0x00ffff })   // Cyan
     ];
-
-    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
-    const cube = new THREE.Mesh(cubeGeometry, materials);
+    const cube = new THREE.Mesh(cubeGeometry, cubeMaterials);
     scene.add(cube);
+
+    // Create a sphere
+    const sphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    scene.add(sphere);
 
     // Variables to store previous acceleration data
     let accelerationX = 0;
@@ -61,14 +67,25 @@
         const rotationY = (y - accelerationY) * 0.05;
 
         // Update the cube rotation
-        cube.rotation.x += rotationX;
-        cube.rotation.y += rotationY;
+        sphere.rotation.x += rotationX;
+        sphere.rotation.y += rotationY;
+
+        // Update the sphere position
+        const radius = 2;
+        const cubePosition = new THREE.Vector3();
+        cube.getWorldPosition(cubePosition);
+        sphere.position.set(
+            cubePosition.x + radius * Math.sin(sphere.rotation.y),
+            cubePosition.y + radius * Math.sin(sphere.rotation.x),
+            cubePosition.z + radius * Math.cos(sphere.rotation.y),
+        );
 
         // Store the current acceleration values
         accelerationX = x;
         accelerationY = y;
         accelerationZ = z;
     }
+
 
     // Render the scene
     function animate() {
