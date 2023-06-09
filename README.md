@@ -9,6 +9,7 @@ Report in .docx:
 Example of work: 
 
 
-https://github.com/NazariiYeremenko/PA2_TUIAccelerometer_V9/assets/122809953/6a1811e4-2983-4f65-a2c7-e4d9fd3e80f7
+https://github.com/NazariiYeremenko/PA2_TUIAccelerometer_V9/assets/122809953/e9096c97-5edb-4493-bb17-85b8b3cff6ad
+
 
 
